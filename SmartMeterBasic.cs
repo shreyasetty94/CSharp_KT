@@ -21,6 +21,6 @@ class SmartMeterBasic
             bill = (100 * 5) + (100 * 7) + (units - 200) * 10;
         }
 
-        Console.WriteLine("Total electricity bill: Rs." + bill);
+        Console.WriteLine("Total electricity bill: $" + bill);
     }
 }
