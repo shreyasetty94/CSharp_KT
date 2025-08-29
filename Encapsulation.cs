@@ -24,7 +24,7 @@ class SmartMeterAccount
     }
 }
 
-class Program
+class Encapsulation
 {
     static void Main()
     {
