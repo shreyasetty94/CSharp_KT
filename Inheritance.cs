@@ -1,6 +1,5 @@
 using System;
 
-// Base class
 class SmartMeter
 {
     public int MeterId { get; set; }
@@ -18,7 +17,6 @@ class SmartMeter
     }
 }
 
-// Derived class: ResidentialMeter
 class ResidentialMeter : SmartMeter
 {
     public string HouseType { get; set; }
@@ -35,7 +33,6 @@ class ResidentialMeter : SmartMeter
     }
 }
 
-// Derived class: CommercialMeter
 class CommercialMeter : SmartMeter
 {
     public string BusinessType { get; set; }
@@ -52,8 +49,7 @@ class CommercialMeter : SmartMeter
     }
 }
 
-// Main Program
-class Program
+class Inheritance
 {
     static void Main()
     {
