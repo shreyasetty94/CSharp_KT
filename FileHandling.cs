@@ -1,40 +1,27 @@
 using System;
 using System.IO;
-using System.Threading.Tasks;
 
-class FileHandling
+class Program
 {
-    static async Task Main()
+    static void Main()
     {
-        Console.WriteLine("Enter 5 favorite colors:");
         string filePath = "C:\\Users\\ShreyaSetty\\Documents\\favorites.txt";
+        Console.WriteLine("Enter 5 favorite colors:");
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {
             for (int i = 0; i < 5; i++)
             {
-                string color = Console.ReadLine();
-                writer.WriteLine(color);
+                writer.WriteLine(Console.ReadLine());
             }
         }
 
-        Console.WriteLine("\nColors saved! Now reading from file:\n");
-        using (StreamReader reader = new StreamReader(filePath))
+        Console.WriteLine("\nYour colors are:");
+        foreach (var line in File.ReadLines(filePath))
         {
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+            Console.WriteLine(line);
         }
-
-        Console.WriteLine("\nStarting file download simulation...");
-        await DownloadFileAsync();
-    }
-
-    static async Task DownloadFileAsync()
-    {
-        await Task.Delay(5000); 
-        Console.WriteLine("Download complete!");
     }
 }
+
+
